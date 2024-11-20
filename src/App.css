@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  
+  max-width: 100%;
 }
 
 /* Layout principal */
@@ -14,25 +14,19 @@
 }
 
 /* Menú lateral */
-aside{
+.side-menu{
   padding: 20px 0;
   height: 100vh;
   background-color: #d3d3d3;
-  border: 1px solid #000000;
   width: 250px; /* Ancho fijo para el menú lateral */
   position: fixed; /* Fijamos el menú lateral para que no se mueva al hacer scroll */
-  left: 0;
-}
-
-.side-menu{
-  padding: 20px 20px;
+  border: 1px solid #000000;
 }
 
 .menu-desplegable {
   transform: translateX(0%);
   transition: 0.5s;
   width: 100%;
-
 }
 
 .menu-desplegable .icon {
@@ -49,6 +43,7 @@ aside{
 
 .lista-del-menu{
   margin-top: 20px; /*separa el menu del icono*/
+  margin-left: 10px;
 }
 .lista-menu{
   list-style: none;
@@ -85,6 +80,8 @@ aside{
   padding: 8px;
   cursor: pointer;
 }
+
+
 
 /* Header */
 .header {
@@ -197,4 +194,40 @@ aside{
   display: flex;
   border: 1px solid #000000;
   margin-left: 250px; 
+}
+
+
+@media (max-width: 768px) {
+  /* Mostrar el menú cuando está abierto */
+  .side-menu {
+    background-color: transparent;
+    border: 0;
+  }
+  /* Inicialmente el menú está oculto */
+.lista-del-menu {
+  transform: translateX(-100%); /* Oculto fuera de la vista */
+  background-color: #d3d3d3;
+  padding: 0;
+  transition: transform 0.3s ease-in-out; /* Agregar transición para suavizar el movimiento */
+}
+
+/* Mostrar el menú cuando se aplica la clase abrir_menu */
+.lista-del-menu.abrir_menu {
+  transform: translateX(0); /* El menú se mueve a su posición visible */
+}
+
+
+  .header{
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .footer{
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .main-content{
+    max-width: 100%;
+    margin-left: 0;
+  }
 }

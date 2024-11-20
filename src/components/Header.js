@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import User from "../img/user.png";
-import LogOut from "../img/log_out.png";
-import Settings from "../img/settings.png";
-import Logo from "../img/image005.png";
-import FloatingBoxProfile from "./DropDownProfile";
-import FloatingBoxSettings from "./DropDownSettings";
-import FloatingBoxLogOut from "./DropDownLogOut";
+import React, { useState } from "react"
+import User from "../img/user.png"
+import LogOut from "../img/log_out.png"
+import Settings from "../img/settings.png"
+import Logo from "../img/image005.png"
+import FloatingBoxProfile from "./DropDownProfile"
+import FloatingBoxSettings from "./DropDownSettings"
+import FloatingBoxLogOut from "./DropDownLogOut"
 
 //Estados de cada logo
 const Header = ({ onClose }) => {

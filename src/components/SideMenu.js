@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import Menu from "../img/menu.png"
 import Cancel from "../img/cancel.png"
+import SideMenuFijo from "./SideMenuFijo"
 
 const SideMenu = () => {
   // Estado para controlar si el menú lateral está abierto o cerrado
@@ -22,7 +23,6 @@ const SideMenu = () => {
 
   return (
     <div className="side-menu">
-      
       {/* Botón para abrir el menú (solo visible si está cerrado) */}
       {!isMenuOpen && (
         <img
@@ -43,8 +43,8 @@ const SideMenu = () => {
               className="icon"
               onClick={toggleMenu}
             />
-          </div>
-      <div className="lista-del-menu">
+        </div>
+        <div className={`lista-del-menu ${isMenuOpen ? "abrir_menu" : ""}`}>
           <h1>Menú Negocios</h1>
           <ul className="lista-menu">
             <li onClick={toggleSubMenu}>
@@ -57,8 +57,11 @@ const SideMenu = () => {
             <li>Proceso de Negocio</li>
           </ul>
         </div>
-        </div>
+      </div>
       )}
+      <div className={`lista-del-menu ${isMenuOpen ? "abrir_menu" : ""}`}>
+        <SideMenuFijo />
+      </div>
     </div>
     
   )
