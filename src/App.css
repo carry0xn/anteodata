@@ -2,60 +2,22 @@
   margin: 0;
   padding: 0;
   max-width: 100%;
+  font-family: 'Calibri', sans-serif; 
+  font-size: 15px; 
 }
 
 /* Layout principal */
 .layout {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
+  max-width: 100%;
   height: 100vh;
-  flex-wrap: wrap;
 }
 
 /* Menú lateral */
 .side-menu{
-  padding: 20px 0;
+  margin: 10px;
   height: 100vh;
-  background-color: #d3d3d3;
-  width: 250px; /* Ancho fijo para el menú lateral */
-  position: fixed; /* Fijamos el menú lateral para que no se mueva al hacer scroll */
-  border: 1px solid #000000;
-}
-
-.menu-desplegable {
-  transform: translateX(0%);
-  transition: 0.5s;
-  width: 100%;
-}
-
-.menu-desplegable .icon {
-  display: block; 
-}
-
-.menu-desplegable ul {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.lista-del-menu{
-  margin-top: 20px; /*separa el menu del icono*/
-  margin-left: 10px;
-}
-.lista-menu{
-  list-style: none;
-  font-size: 1.1rem;
-  
-}
-.lista-menu li {
-  list-style: none;
-  padding: 10px 15px;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
+  background-color: #F9FAFB;
+  position: fixed; /* Fija el menú lateral para que no se mueva al hacer scroll */
 }
 
 /*abrir y cerrar menu*/
@@ -63,25 +25,13 @@
   transform: translate(0%);
   transition: 0.5s;
 }
-
-/* Submenú */
-.submenu li{
-  display: none; /* Por defecto, el submenú está oculto */
-  
+.lista-del-menu{
+  margin-top: 10px;
 }
-
-.submenu.mostrar li{
-  display: block; /* Muestra el submenú cuando está abierto */
-  padding: 10px 25px;
-}
-
-/* Estilo adicional para el submenú */
-.submenu li {
-  padding: 8px;
+.lista-menu li, .menu-item{
   cursor: pointer;
+  padding: 10px 10px;
 }
-
-
 
 /* Header */
 .header {
@@ -89,14 +39,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: #d3d3d3;
-  border: 1px solid #000000;
-  height: 100px;
-  z-index: 1;
-  /* Añadimos un margen para evitar que se solape con el menú */
-  margin-left: 250px; 
+  background-color: #F9FAFB;
+  height: 50px;
 }
-
+.logo-cliente{
+  width: 70px;
+  margin-left: 210px; /*A MODIFICAR*/
+}
 /* Iconos */
 .icon {
   cursor: pointer;
@@ -108,46 +57,29 @@
 .dropDownProfile{
   position:absolute;
   width: 100px;
-  padding: 15px;
+  padding: 15px 15px;
   border-radius: 8px;
-  background-color: #d3d3d3;
+  background-color: #F9FAFB;
   border: 1px solid #000000;
-  
 }
 
 .dropDownProfile li{
   list-style: none;
 }
 
-.content-wrapper{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
 /* Simulacion de Contenido principal */
-.main-content {
-  flex-grow: 1;
-  padding: 20px;
-  margin-left: 250px; /* Esto asegura que el contenido no se superponga con el menú */
-  overflow-y: auto; /* Permite el desplazamiento si el contenido es más largo */
-}
-
-/* Sección estilo Anteodata */
 .anteodata-section {
   text-align: center;
   padding: 40px 20px;
-  
+  margin-left: 200px; /*A MODIFICAR*/
 }
 
 .anteodata-header h1 {
-  font-size: 2.5rem;
   color: #9a0000;
   margin-bottom: 10px;
 }
 
 .anteodata-header p {
-  font-size: 1.2rem;
   color: #030301;
   margin-bottom: 30px;
 }
@@ -173,20 +105,22 @@
   text-align: left;
 }
 
+.card li{
+  list-style: none;
+}
+
 .card h2 {
-  font-size: 1.5rem;
   color: #030301;
   margin-bottom: 10px;
 }
 
 .card p {
-  font-size: 1rem;
   color: #171717;
 }
 
 /*//////////////////*/
 
-/* Footer */
+/* Footer 
 .footer {
   background-color: #d3d3d3;
   padding: 10px 20px;
@@ -195,7 +129,7 @@
   border: 1px solid #000000;
   margin-left: 250px; 
 }
-
+*/
 
 @media (max-width: 768px) {
   /* Mostrar el menú cuando está abierto */
@@ -203,30 +137,40 @@
     background-color: transparent;
     border: 0;
   }
+
   /* Inicialmente el menú está oculto */
-.lista-del-menu {
-  transform: translateX(-100%); /* Oculto fuera de la vista */
-  background-color: #d3d3d3;
-  padding: 0;
-  transition: transform 0.3s ease-in-out; /* Agregar transición para suavizar el movimiento */
-}
+  .lista-del-menu {
+    transform: translateX(-100%); /* Oculto fuera de la vista */
+    background-color: transparent;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out; /* Agregar transición para suavizar el movimiento */
+  }
 
-/* Mostrar el menú cuando se aplica la clase abrir_menu */
-.lista-del-menu.abrir_menu {
-  transform: translateX(0); /* El menú se mueve a su posición visible */
-}
-
+  /* Mostrar el menú cuando se aplica la clase abrir_menu */
+  .lista-del-menu.abrir_menu {
+    margin-top: 0;
+    transform: translateX(0); /* El menú se mueve a su posición visible */
+    background-color: #F9FAFB;
+  }
+  .lista-menu li{
+    list-style: none;
+  }
 
   .header{
     max-width: 100%;
     margin-left: 0;
   }
+
+  .header .logo-cliente{
+    margin-left: 35px;
+  }
+
   .footer{
     max-width: 100%;
     margin-left: 0;
   }
 
-  .main-content{
+  .anteodata-section{
     max-width: 100%;
     margin-left: 0;
   }

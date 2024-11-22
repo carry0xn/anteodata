@@ -12,6 +12,4 @@ const SideMenuFijo = () => {
         </div>
     )
 }
-
-
 export default SideMenuFijo
