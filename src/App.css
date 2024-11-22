@@ -3,7 +3,7 @@
   padding: 0;
   max-width: 100%;
   font-family: 'Calibri', sans-serif; 
-  font-size: 15px; 
+  font-size: 9pt; 
 }
 
 /* Layout principal */
@@ -44,7 +44,7 @@
 }
 .logo-cliente{
   width: 70px;
-  margin-left: 210px; /*A MODIFICAR*/
+  margin-left: 170px; /*A MODIFICAR*/
 }
 /* Iconos */
 .icon {
@@ -71,7 +71,7 @@
 .anteodata-section {
   text-align: center;
   padding: 40px 20px;
-  margin-left: 200px; /*A MODIFICAR*/
+  margin-left: 170px; /*A MODIFICAR*/
 }
 
 .anteodata-header h1 {
